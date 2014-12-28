@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h1 class="page-heading">Work</h1>
+
+  <ul class="post-list">
+      {% for page in site.pages %}
+        {% if page.title and page.menu != 'main' %}
+        <li><h2><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></h2></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+
+{% for project in site.data['page_collections']['projects'].pages %}
+  <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
+{% endfor %}
+
+<!--   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+ -->
+</div>
