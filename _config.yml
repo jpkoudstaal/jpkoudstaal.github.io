@@ -1,0 +1,28 @@
+# Site settings
+title: My jekyll powered site
+email: hi@jpkoudstaal.com
+description: > # this means to ignore newlines until "baseurl:"
+  Site description
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://jpkoudstaal.com" # the base hostname & protocol for your site
+twitter_username: jpkoudstaal
+github_username:  jpkoudstaal
+
+# Build settings
+#markdown: kramdown
+markdown: redcarpet
+
+
+# https://github.com/robwierzbowski/jekyll-picture-tag
+picture:
+  source: "assets/images/_fullsize"
+  output: "generated"
+  markup: "picture"
+  presets:
+    default:
+      ppi: [1, 1.5]
+      source_medium:
+        media: "(min-width: 40em)"
+        width: "300"
+      source_default: 
+        width: "600"
