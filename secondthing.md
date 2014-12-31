@@ -4,7 +4,7 @@ title:  "second thing"
 permalink: /work/second-thing/
 ---
 
-##hi
+##Second thing jwz
 
 sup
 
