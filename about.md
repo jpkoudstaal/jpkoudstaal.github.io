@@ -1,12 +1,10 @@
 ---
 layout: page
-title: About
+title: About me
 permalink: /about/
 menu: main
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+I am a designer working at [Mangrove](http://mangrove.com) in Rotterdam, The Netherlands. I enjoy good coffee, riding my bike to work, basketball and comic books.I spend my days creating beautiful and usable websites. In my spare time I like to spend time with my wife and my almost 4-year-old daughter Juliet. 
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+I like to travel, take photos whenever I can and am obsessed with New York City. I grew up on a steady diet of comic books and LEGO®. I have been playing basketball since I was little and still do to this day.

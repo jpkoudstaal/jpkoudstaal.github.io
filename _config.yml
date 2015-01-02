@@ -1,17 +1,15 @@
 # Site settings
-title: My jekyll powered site
+title: Jan-Paul Koudstaal
 email: hi@jpkoudstaal.com
 description: > # this means to ignore newlines until "baseurl:"
-  Site description
+  I am a designer working at Mangrove in Rotterdam, The Netherlands. I enjoy good coffee, riding my bike to work, basketball and comic books.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://jpkoudstaal.com" # the base hostname & protocol for your site
 twitter_username: jpkoudstaal
-github_username:  jpkoudstaal
 
 # Build settings
 #markdown: kramdown
 markdown: redcarpet
-
 
 # https://github.com/robwierzbowski/jekyll-picture-tag
 picture:
@@ -23,6 +21,6 @@ picture:
       ppi: [1, 1.5]
       source_medium:
         media: "(min-width: 40em)"
-        width: "300"
+        width: "1200"
       source_default: 
-        width: "600"
+        width: "300"
