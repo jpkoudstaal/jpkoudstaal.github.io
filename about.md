@@ -1,7 +1,7 @@
 ---
 layout: about
 title: About me
-subtitle: I’m a senior designer at <a href="http://mangrove.com">Mangrove</a> in Rotterdam, The&nbsp;Netherlands.I’ve had the privilege to work for <a href="/work/hogeveluwe">National Park De Hoge Veluwe</a>, <a href="/work/kwikfit">Kwik-Fit</a> and <a href="/work/hartstichting">The&nbsp;Dutch Heart Foundation</a>.
+subtitle: I’m a senior designer at <a href="http://mangrove.com">Mangrove</a> in Rotterdam, The&nbsp;Netherlands. I’ve had the privilege to work for <a href="/work/hogeveluwe">National Park De Hoge Veluwe</a>, <a href="/work/kwikfit">Kwik-Fit</a> and <a href="/work/hartstichting">The&nbsp;Dutch Heart Foundation</a>.
 permalink: /about/
 menu: main
 intro: I spend my days creating beautiful and usable websites. In my spare time I like to spend time with my wife and 4-year-old daughter Juliet.
