@@ -19,8 +19,16 @@ picture:
   presets:
     default:
       ppi: [1, 1.5]
-      source_medium:
+      source_large:
         media: "(min-width: 40em)"
         width: "1200"
+      source_medium:
+        media: "(min-width: 30em)"
+        width: "800"
       source_default: 
-        width: "300"
+        width: "450"
+
+#https://github.com/dmathieu/glynn
+ftp_host: 'jpkoudstaal.com'
+ftp_dir: '/httpdocs/'
+ftp_passive: false

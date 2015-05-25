@@ -3,44 +3,128 @@
 ---
 @charset "utf-8";
 
-
+// Google webfonts
+//@import url(http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic|Lato:300,700);
+@import url(http://fonts.googleapis.com/css?family=Raleway:200,400,800);
 
 // Our variables
-$base-font-family: Georgia, Helvetica, Arial, sans-serif;
+$base-font-family: 'Raleway', sans-serif;
 $base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+$small-font-size:  $base-font-size * 0.7;
+$base-line-height: 1.6;
+
+$header-font-family: 'Raleway', sans-serif;
 
 $spacing-unit:     30px;
 
 $text-color:       #222;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$background-color: #efefef; // greyish
+$brand-color:      #1c2c48; // dark blue
+$brand-color-2:      #C2DEE0; //light blue
 
-$grey-color:       #828282;
+$grey-color:       #a3a9b3;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
+$transition-buttons:	background-color .5s ease, color .5s ease, border-color .5s ease;
+$transition-links:	border-bottom .2s ease, color .2s ease;
+
+
+
 // Width of the content area
-$content-width:    800px;
+$content-width:    1200px;
 
-$on-palm:          600px;
-$on-laptop:        800px;
+$mobile:         450px;
+$tablet:         600px;
+$bigtablet:      800px;
+$desktop:        1200px;
 
 
-
-// Using media queries with like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
 @mixin media-query($device) {
-    @media screen and (max-width: $device) {
+    @media screen and (min-width: $device) {
         @content;
     }
 }
+
+// Animations
+
+.animated {
+  -webkit-animation-duration: .7s;
+  animation-duration: .7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-delay: .5s;
+  animation-delay: .5s;
+}
+
+.delayed{
+	-webkit-animation-delay: .8s;
+	animation-delay: .8s;
+}
+
+.delayed2{
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.2s;
+}
+
+.delayed3{
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 10%, 0);
+  }
+
+  100% {
+    opacity: 1;
+   	transform: none;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 10%, 0);
+  }
+
+  100% {
+    opacity: 1;
+   	transform: none;
+  }
+}
+
+.fadeInUp {
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+}
+
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
 
 
 

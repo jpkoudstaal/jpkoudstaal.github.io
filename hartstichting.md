@@ -1,0 +1,33 @@
+---
+layout: page
+subtitle:  "Hartstichting"
+group: "navigation"
+title:  "An online identity with heart"
+intro:  "One in every three visitors of Kwik-Fit’s website uses a mobile phone or tablet. Naturally optimising for the mobile visitors was one of the main priorities in the re-design of the website."
+permalink: /work/hartstichting/
+externallink: "http://hartstichting.nl"
+morelink: "http://mangrove.com/cases/hartstichting"
+background: hartstichting.jpg
+---
+
+Presenting the identity of the organization in a powerful way was one of the core objectives of the new site. Not everyone is familiar with the work of the Hartstichting (the Dutch heart foundation) and the image of white lab coats sometimes looms large. 
+
+
+> “Clear on content and form”
+
+<div class="img_wide">
+{% picture [] hartstichting-1.jpg [attribute=""] %}
+</div>
+
+We brought the identity of the foundation to the fore and built everything else around it. In a short period of time a site came into being that is warm, modern, dynamic and clear. Much like the Hartstichting itself.
+
+## The connections
+ 
+The Dutch Heart Foundation has a central position in society. That became an important starting point. Collectors, volunteers, donors, care professionals, scientists, patients and their families... On the old site they were all approached separately; here we bring them all together, gathered around the work of the foundation.
+ 
+ 
+## Clear on content and form
+ 
+The Dutch Heart Foundation has an important role to fulfill in terms of providing information. People come to the site to obtain clear information, and that’s what they get. Short and snappy lists of facts and figures are only part of the info the site provides. Clear icons, pleasant fonts, good color contrasts and a logical layout of the site all contribute to the site being easy to oversee with clear signposting. The site is fully responsive on large screens as well as on small screens.
+
+

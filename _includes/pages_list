@@ -1,0 +1,24 @@
+<div class="row--pages">
+	<h3>Here’s more of my recent work</h3>
+	{% for node in pages_list %}
+	  {% if group == node.group %}
+	    {% if page.url != node.url %}
+	    <div class="block">
+	      	<a href="{{node.url}}">
+	      		{% picture [] {{ node.background }} [attribute=""] %}
+	      		<div class="content">
+	      			<div>
+	      				<div>
+	      					<span>{{node.title}}</span>
+	      					<span class="h3">{{node.subtitle}}</span>
+	      				</div>
+	      			</div>
+	      		</div>
+	      	</a>
+	      </div>
+		  {% endif %}  
+	  {% endif %}
+	{% endfor %}
+	{% assign pages_list = nil %}
+	{% assign group = nil %}
+</div>

@@ -17,13 +17,16 @@ body {
     font-family: $base-font-family;
     font-size: $base-font-size;
     line-height: $base-line-height;
-    font-weight: 300;
-    color: $text-color;
+    font-weight: 400;
+    color:$text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
+    cursor:default;
 }
 
-
+body *{
+    box-sizing: border-box;
+}
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -73,6 +76,14 @@ li {
          margin-bottom: 0;
     }
 }
+.post article ul.list-inline{
+    margin:0;
+    li{
+       display: inline;
+       margin-right: 10px;
+       list-style: none;  
+    }
+}    
 
 
 
@@ -80,10 +91,58 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
+    color: $brand-color;
+    font-weight: 800;
 }
 
 
+h1{
+    font-size:2em;
+    @include media-query($tablet) {
+        font-size:3em;
+    }
+    line-height: 1.2em;
+    font-weight: bold;
+}
+
+h2,.h2{
+    font-size:1.6em;
+    @include media-query($tablet) {
+        font-size:1.8em;
+    } 
+    margin: 20px 0 10px 0; 
+}
+
+p.intro{
+    color: $brand-color;
+    font-size:1.4em;  
+    padding:20px 0;
+    max-width: 700px;
+    margin:0 auto;
+}
+
+h3,.h3{
+    font-size: .8em;
+    margin-bottom: 4px;
+    padding-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: $grey-color;
+    display: block;
+}
+
+.center-text{
+    text-align: center;
+}
+
+.padding-md{
+    padding:14px 30px !important;
+}
+
+.margin-md{
+    margin:20px 0;
+}
 
 /**
  * Links
@@ -91,30 +150,31 @@ h1, h2, h3, h4, h5, h6 {
 a {
     color: $brand-color;
     text-decoration: none;
-
+    transition: $transition-links;
+    border-bottom:1px solid rgba($brand-color,.2);
     &:visited {
         color: darken($brand-color, 15%);
     }
 
     &:hover {
-        color: $text-color;
-        text-decoration: underline;
+        border-bottom:1px solid rgba($brand-color,.8);
     }
 }
 
+.active{
+  // text-decoration: underline; 
+}
 
 
 /**
  * Blockquotes
  */
 blockquote {
-    color: $grey-color;
-    border-left: 4px solid $grey-color-light;
-    padding-left: $spacing-unit / 2;
-    font-size: 18px;
+    color: $brand-color;
+    padding: $spacing-unit * 2;
+    font-size: 38px;
+    text-align: center;
     letter-spacing: -1px;
-    font-style: italic;
-
     > :last-child {
         margin-bottom: 0;
     }
@@ -158,15 +218,17 @@ pre {
     max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
     margin-right: auto;
     margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
+    // padding-right: $spacing-unit;
+    // padding-left: $spacing-unit;
+    padding:0;
     @extend %clearfix;
 
-    @include media-query($on-laptop) {
+    @include media-query($desktop) {
         max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
         max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
+     //   padding-right: $spacing-unit / 2;
+     //   padding-left: $spacing-unit / 2;
+
     }
 }
 
@@ -201,4 +263,24 @@ pre {
             fill: $grey-color;
         }
     }
+}
+
+
+.onload-fadein{
+    -webkit-transition: opacity .5s ease;   
+    transition: opacity .5s ease;
+    opacity: 0;
+}
+
+.onload-fadein.is-loaded{
+    opacity: 1;
+}
+
+
+
+.small{
+    font-size: $small-font-size;
+}
+.muted{
+    opacity: .4;
 }
