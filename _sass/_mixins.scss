@@ -9,12 +9,12 @@
 }
 
 // Animations
-@mixin animation($type, $duration, $direction: null, $timing: null) {
+@mixin animation($type, $duration, $direction: null, $timing: null, $delay: null) {
 
   @if $direction == null {
-    animation: #{$type} $duration $timing;
+    animation: #{$type} $duration $timing $delay;
   } @else {
-    animation: #{$type}--#{$direction} $duration $timing;
+    animation: #{$type}--#{$direction} $duration $timing $delay;
   }
 }
 
