@@ -71,6 +71,10 @@ header {
   }
 }
 
+.parallax-slider {
+  max-height: 9999px;
+}
+
 footer {
   @include font-size(12);
   color: #5D6C81;
