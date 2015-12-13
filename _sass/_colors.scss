@@ -1,0 +1,22 @@
+////////////////////////
+//  Colors
+////////////////////////
+
+$colors:
+    'white' $cl-white,
+    'primary' $cl-primary,
+    'secondary' $cl-secondary,
+    'tertiary' $cl-tertiary,
+    'quaternary' $cl-quaternary,
+    'quinary' $cl-quinary;
+
+@each $name, $color in $colors {
+
+    .cl-#{$name} {
+        color: $color
+    }
+
+    .bg-#{$name} {
+        background-color: $color
+    }
+}

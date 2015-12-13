@@ -1,6 +1,9 @@
 ---
-layout: about
-title: Hello!
-subtitle: My name is Jan-Paul and I work as a senior designer at <a href="http://mangrove.com">Mangrove</a> in Rotterdam, The&nbsp;Netherlands.
-intro: I enjoy good coffee, riding my bike to work, basketball and comic books. Find out <a href="/about">more about me</a> or take a look at <a href="/work">my work</a>.
+layout: default
 ---
+
+{% for post in site.posts %}
+  <li class="mb1">
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+  </li>
+{% endfor %}

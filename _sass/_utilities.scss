@@ -1,0 +1,37 @@
+////////////////////////
+//  Textarea
+////////////////////////
+
+.resize-none       { resize: none; }
+.resize-vertical   { resize: vertical; }
+.resize-horizontal { resize: horizontal; }
+
+////////////////////////
+//  Misc
+////////////////////////
+
+.hidden--block {
+	display: none;
+}
+
+.hidden--visibility {
+	visibility: hidden;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.no-pointer-events {
+  pointer-events: none;
+}
+
+.disabled {
+  opacity: .5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.display-inline-block {
+	display: inline-block;
+}

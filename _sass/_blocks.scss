@@ -1,0 +1,188 @@
+////////////////////////
+//  Blocks
+////////////////////////
+
+// Quotes
+.block--quote {
+  text-align: center;
+  border: 2px solid $cl-white;
+
+  &:hover {
+
+    * {
+      opacity: .1;
+    }
+
+    .block--quote__quote {
+      opacity: 1;
+      transform: translate3d(0, -40px, 0);
+    }
+  }
+
+  &.block--secondary {
+    background-color: $cl-white;
+
+    [class^=spacer]:before,
+    [class^=spacer]:after {
+      background-color: $cl-primary;
+    }
+  }
+
+  * {
+    transition: opacity $transition-duration ease-out;
+  }
+}
+
+.block--quote__author {
+  @extend %font-sans-secondary;
+  @include font-size(10);
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.block--quote__quote {
+  @extend %font-serif;
+  @include font-size(32);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 41px;
+  letter-spacing: 1px;
+  transform: scale(.8);
+  transition-property: transform, opacity;
+  transition-duration: $transition-duration;
+  transition-timing-function: ease-out;
+}
+
+%block-base {
+  display: block;
+  position: relative;
+  padding: 10rem 4rem;
+  text-align: center;
+  background-size: cover;
+}
+
+.block--primary {
+  @extend %block-base;
+  color: $cl-white;
+
+  &:hover {
+    color: $cl-white;
+  }
+}
+
+.block--secondary {
+  @extend %block-base;
+  color: $cl-secondary;
+
+  &:hover {
+    color: $cl-secondary;
+  }
+}
+
+.block--cta {
+
+  &:after {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba($cl-primary, .6);
+    transition: background-color $transition-duration $cubic-bezier;
+  }
+
+  &:hover {
+
+    &:after {
+      background-color: rgba($cl-primary, .8);
+    }
+
+    .block__action {
+      color: $cl-primary;
+
+      &:after {
+        width: 300px;
+        height: 300px;
+        margin-top: -150px;
+        margin-left: -150px;
+      }
+    }
+  }
+
+  &.block--secondary {
+
+    &:after {
+      background-color: rgba($cl-white, .6);
+    }
+
+    &:hover {
+
+      &:after {
+        background-color: rgba($cl-white, .8);
+      }
+
+      .block__action {
+        color: $cl-white;
+      }
+    }
+
+    .block__action {
+      color: $cl-secondary;
+      border-color: $cl-secondary;
+
+      &:after {
+        background-color: $cl-secondary;
+      }
+    }
+  }
+}
+
+.block__title {
+  @extend %font-sans-secondary;
+  @extend .depth-1;
+  @include font-size(35);
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto 4rem;
+  line-height: 50px;
+  letter-spacing: 1px;
+  transition: transform $transition-duration $cubic-bezier;
+}
+
+.block__action {
+  @extend %font-sans-secondary;
+  @extend .depth-1;
+  @include font-size(10);
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 1.5rem 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 2px solid $cl-white;
+  transition-property: transform, color;
+  transition-duration: $transition-duration;
+  transition-timing-function: $cubic-bezier;
+
+  &:after {
+    @extend .depth-1;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-top: 0;
+    margin-left: 0;
+    background-color: $cl-white;
+    border-radius: 300px;
+    transition-property: width, height, margin;
+    transition-duration: $transition-duration;
+    transition-timing-function: $cubic-bezier;
+  }
+}

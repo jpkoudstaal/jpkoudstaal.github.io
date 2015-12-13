@@ -1,22 +1,38 @@
 ---
-layout: default
+layout: blog
 ---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="container">
+ 
+ 	<div class="xs2 subhead subhead--vertical cl-white"><a href="/#articles">Back home</a></div>
 
-<header class="post-header-blog">
-	<div class="content invert">
-		<h1 class="animated fadeInUp">{{ page.title }}</h1>
-		{% if page.subtitle %}<h2 class="animated fadeInUp delayed">{{ page.subtitle }}</h2>{% endif %}
-		<h3 class="animated fadeInUp delayed2">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</h3>
-	</div>	
-</header>
+  	<div class="xs10 ptb8 content--primary" itemprop="articleBody">
+   	 <h1 class="cl-primary" itemprop="name headline">{{ page.title }}</h1>
+   	 <h2>{{ page.subtitle }}</h2>
 
-<div class="wrapper">
-	<div class="post animated fadeIn delayed3">
-	  <article class="post-content">
+    <p><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
 
-	  {% if page.intro %}<p class="intro">{{ page.intro }}</p>{% endif %}
+	<p class="intro">{{ page.intro }}</p>
+    {{ content }}
+  	</div>
+  </div>
+</article>
 
-	    {{ content }}
-	  </article>
-	</div>
-</div>
+
+  <section class="pt0 pb8" id="about">
+    <div class="container">
+  
+      <div class="xs2 subhead subhead--vertical cl-white">Articles&nbsp;I&nbsp;wrote</div>
+      <div class="xs10 mt8 content--primary">
+        <ul class="list-style-none text-italic">
+
+        {% for post in site.posts %}
+  		  <li class="mb1">
+  		      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+  		  </li>
+  		  {% endfor %}
+
+        </ul>
+      </div>
+    </div>
+  </section>
