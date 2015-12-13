@@ -61,6 +61,11 @@ h6 {
   @include font-size(18);
 }
 
+small,
+.text-small {
+  @include font-size(9);
+}
+
 // Global
 @font-face {
   font-family: 'Office Code Pro';
@@ -290,7 +295,7 @@ hr {
           h4{
             opacity: 1;
         }
-      } 
+      }
     }
 }
 
@@ -303,7 +308,7 @@ hr {
         &:hover{
           color:$cl-primary;
           border-bottom: 1px solid $cl-primary;
-      } 
+      }
     }
 }
 

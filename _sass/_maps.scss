@@ -33,20 +33,20 @@
 
 		@include md('>') {
 			position: absolute;
-			width: 10px;
-			height: 10px;
+			width: 17px;
+			height: 17px;
 			border-radius: 20px;
 			background: $cl-primary;
 		}
 
 		&:hover {
 
-			span {
+			.pins__label {
 
 				@include md('>') {
 					visibility: visible;
 					opacity: 1;
-					transform: translate3d(0, -60px, 0);
+					transform: translate3d(0, -10px, 0);
 				}
 			}
 		}
@@ -64,12 +64,14 @@
 		}
 	}
 
-	span {
-		display: block;
-		color: $cl-white;
+	.pins__label {
+		padding: 10px;
+		color: $cl-secondary;
 		text-align: center;
-		line-height: 50px;
-		background-color: $cl-black;
+		letter-spacing: 1.5px;
+		background-color: $cl-white;
+		border-radius: 4px;
+		border: 1px solid $cl-secondary;
 		transition-property: transform, opacity, visibility;
 		transition-duration: 300ms;
 		transition-timing-function: $cubic-bezier;
@@ -77,15 +79,20 @@
 		@include md('>') {
 			visibility: hidden;
 			opacity: 0;
-			width: 100px;
-			height: 50px;
-			margin-left: -50px;
-			transform: translate3d(0, -80px, 0);
-
-			&:hover {
-				cursor: default !important;
-				opacity: 0 !important;
-			}
+			position: absolute;
+			bottom: 50%;
+			left: 50%;
+			width: 170px;
+			height: 70px;
+			margin-left: -85px;
 		}
+	}
+
+	.pins__link {
+		@include font-size(16);
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 100%;
 	}
 }
