@@ -35,22 +35,6 @@
   }());
 
 
-  function debounce(func, wait, immediate) {
-    var timeout;
-    console.log('debounce(func, wait, immediate)');
-    return function() {
-      var context = this, args = arguments;
-      var later = function() {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  };
-
   // Parallax Constructor
 
   function Parallax(element, options) {
@@ -166,7 +150,7 @@
   // Parallax Instance Methods
 
   $.extend(Parallax.prototype, {
-    speed:    0.5,
+    speed:    0.2,
     bleed:    0,
     zIndex:   -100,
     iosFix:   true,
@@ -229,8 +213,6 @@
       var overScroll   = this.overScrollFix ? Parallax.overScroll : 0;
       var scrollBottom = scrollTop + Parallax.winHeight;
 
-      console.log('render()');
-
       if (this.boxOffsetBottom > scrollTop && this.boxOffsetTop < scrollBottom) {
         this.visibility = 'visible';
       } else {
@@ -241,21 +223,15 @@
       this.offsetTop = this.offsetBaseTop - this.mirrorTop * (1 - this.speed);
 
       this.$mirror.css({
-        // transform: 'translate3d(0px, 0px, 0px)',
         visibility: this.visibility,
-        transform: 'translate3d(0px,' + (this.mirrorTop - overScroll) + 'px, 0px)',
-        top: 0,
-        left: this.mirrorLeft,
+        transform: 'translate3d('+ this.mirrorLeft + 'px, ' + (this.mirrorTop - overScroll) + 'px, 0px)',
         height: this.boxHeight,
         width: this.boxWidth
       });
 
       this.$slider.css({
-        // transform: 'translate3d(0px, 0px, 0px)',
+        transform: 'translate3d(' + this.offsetLeft + 'px, ' + this.offsetTop + 'px, 0px)',
         position: 'absolute',
-        // top: this.offsetTop,
-        transform: 'translate3d(0px,' + this.offsetTop + 'px, 0px)',
-        left: this.offsetLeft,
         height: this.imageHeight,
         width: this.imageWidth,
         maxWidth: 'none'
@@ -283,20 +259,20 @@
 
       var $doc = $(document), $win = $(window);
 
-      $win.on('scroll.px.parallax load.px.parallax', function() {
-          var scrollTopMax  = Parallax.docHeight - Parallax.winHeight;
-          var scrollLeftMax = Parallax.docWidth  - Parallax.winWidth;
-          Parallax.scrollTop  = Math.max(0, Math.min(scrollTopMax,  $win.scrollTop()));
-          Parallax.scrollLeft = Math.max(0, Math.min(scrollLeftMax, $win.scrollLeft()));
-          Parallax.overScroll = Math.max($win.scrollTop() - scrollTopMax, Math.min($win.scrollTop(), 0));
-          Parallax.requestRender();
-        })
-        .on('resize.px.parallax load.px.parallax', function() {
+      $win.on('resize.px.parallax load.px.parallax', function() {
           Parallax.winHeight = $win.height();
           Parallax.winWidth  = $win.width();
           Parallax.docHeight = $doc.height();
           Parallax.docWidth  = $doc.width();
           Parallax.isFresh = false;
+          Parallax.requestRender();
+        })
+        .on('scroll.px.parallax load.px.parallax', function() {
+          var scrollTopMax  = Parallax.docHeight - Parallax.winHeight;
+          var scrollLeftMax = Parallax.docWidth  - Parallax.winWidth;
+          Parallax.scrollTop  = Math.max(0, Math.min(scrollTopMax,  $win.scrollTop()));
+          Parallax.scrollLeft = Math.max(0, Math.min(scrollLeftMax, $win.scrollLeft()));
+          Parallax.overScroll = Math.max($win.scrollTop() - scrollTopMax, Math.min($win.scrollTop(), 0));
           Parallax.requestRender();
         });
 
