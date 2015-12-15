@@ -14,6 +14,17 @@
 }
 
 .pins {
+	list-style: none;
+
+	&:hover {
+
+		li {
+
+			&:hover {
+				z-index: 15;
+			}
+		}
+	}
 
 	#places.is-visible & {
 
@@ -29,11 +40,8 @@
 		}
 	}
 
-	ul {
-		list-style: none;
-	}
-
 	li {
+		z-index: 10;
 		display: block;
 		cursor: pointer;
 		transform: scale(0);
@@ -71,6 +79,7 @@
 	}
 
 	.pins__label {
+		z-index: 15;
 		padding: 10px;
 		color: $cl-secondary;
 		text-align: center;
