@@ -281,18 +281,18 @@ hr {
   }
 }
 
-#work a h3{
+#work a h4{
   color: white;
 }
 
 #work{
       a{
-        h4{
+        span{
           opacity: 0;
           transition: opacity 200ms;
         }
         &:hover{
-          h4{
+          span{
             opacity: 1;
         }
       }
