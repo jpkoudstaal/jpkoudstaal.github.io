@@ -304,10 +304,10 @@ hr {
         font-size: 120%;
         color:$cl-secondary;
         border-bottom: 1px solid $cl-primary;
-        transition: border-color 200ms;
+        transition: border-color 200ms, border-width 200ms;
         &:hover{
           color:$cl-secondary;
-          border-bottom: 1px solid $cl-secondary;
+          border-bottom: 3px solid $cl-primary;
       }
     }
 }
