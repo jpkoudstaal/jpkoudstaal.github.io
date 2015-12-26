@@ -37,6 +37,14 @@ h2 {
   @extend %font-serif;
   @include font-size(20);
   line-height: 1.3;
+  a{
+    border-bottom:dotted 1px rgba(255,255,255,.5);
+    text-decoration: none !important;
+    &:hover{
+      border-bottom:solid 1px rgba(255,255,255,1);
+    }
+  }
+
 }
 
 h3 {
@@ -225,6 +233,13 @@ hr {
     height: 1px;
     background-color: $cl-primary;
   }
+  &:hover{
+   &:after {
+    bottom: -6px;
+    height: 2px;
+    background-color: $cl-white;
+    } 
+  }
 }
 
 .text-no-underline {
@@ -304,7 +319,7 @@ hr {
         font-size: 120%;
         color:$cl-secondary;
         border-bottom: 1px solid $cl-primary;
-        transition: border-color 200ms, border-width 200ms;
+        transition: border-width 100ms ease;
         &:hover{
           color:$cl-secondary;
           border-bottom: 3px solid $cl-primary;
