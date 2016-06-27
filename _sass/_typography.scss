@@ -54,8 +54,8 @@ h3 {
 }
 
 h4 {
-  @extend %font-sans-secondary;
-  @include font-size(22);
+  //@extend %font-sans-secondary;
+  @include font-size(14);
   line-height: 1.3;
 }
 
@@ -76,8 +76,8 @@ small,
 
 // Global
 @font-face {
-  font-family: 'Office Code Pro';
-  src: url('../fonts/OfficeCodePro-Regular.woff');
+  
+  
 }
 
 ::selection {
@@ -232,6 +232,7 @@ hr {
     width: 100%;
     height: 1px;
     background-color: $cl-primary;
+    transition: background-color 200ms;
   }
   &:hover{
    &:after {
@@ -296,12 +297,9 @@ hr {
   }
 }
 
-#work a h4{
-  color: white;
-}
 
 p.viewmore{
-  font-size: 120%;
+ // font-size: 120%;
   a{
       color:$cl-secondary;
       border-bottom: 1px solid $cl-secondary;
@@ -350,4 +348,28 @@ p.viewmore{
           border-bottom: 1px solid white;
       }
     }
+}
+
+.page{
+  h2{
+    padding-top:2rem;
+  }
+  blockquote{
+    p {
+      padding-top:30px;
+      text-indent: -0.5em;
+    }
+    font-style: italic;
+    font-size:120%;
+
+  }
+  cite{
+    display: block;
+    padding-bottom:30px;
+    font-size:80%;
+  }
+  img{
+    padding-bottom:30px;
+    border:1px solid #eee;
+  }
 }

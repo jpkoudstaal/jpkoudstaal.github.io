@@ -3,23 +3,83 @@ layout: page
 ---
 
 <!DOCTYPE html>
-<html>
+<html class="page">
 
 {% include head.html %}
 
 
 
+<header class="pb5 parallax-window" data-parallax="scroll" data-image-src="images/{{ page.bg }}" data-z-index="1">
+  <nav class="pt3 depth-3 position-relative">
+      <div class="container">
+        <div class="row">
+          <div class="xs2 subhead subhead--vertical"></div>
+          <div class="xs10 content--primary">
+            <ul class="list-style-none pull font-sans text-uppercase">
+              <li class="pr4 mb1"><a class="cl-white" href="#work">Selected work</a></li>
+              <li class="pr4 mb1"><a class="cl-primary text-underline--secondary" href="/#about">About me</a></li>
+              <li class="pr4 mb1"><a class="cl-primary text-underline--secondary" href="/#articles">What I wrote</a></li>
+              <li class="pr4 mb1"><a class="cl-primary text-underline--secondary" href="/#places">Places I’ve been</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="header__content">
+    
+
+    <div class="container depth-2 position-relative">
+      <div class="row">
+        <div class="xs2 subhead subhead--vertical cl-white">Project</div>
+        <div class="xs10 content--primary">
+          <h1 class="cl-primary">{{ page.title }}</h1>
+          <h2 class="cl-white">{{ page.intro }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 <main>
-  <section class="bg-secondary">
+  <section class="bg-white cl-secondary">
     <div class="container">
-     	<div class="row">
-			{{ content }} 
-		</div>
+     	<div class="row ptb5">
+	     	<div class="xs2 subhead--vertical"></div>
+			<div class="sm2">
+		        <span class="subhead cl-primary">Role</span> <h4 class="text-italic">{{ page.role}}</h4>
+		    </div>
+			{% if page.agency %}
+			<div class="sm2">
+				<span class="subhead cl-primary">Agency</span> <h4 class="text-italic">{{ page.agency}}</h4>
+			</div>
+			{% endif %}
+			<div class="sm6">
+		        <span class="subhead cl-primary">Client</span> <h4 class="text-italic">{{ page.client}}</h4>
+			</div>
+			<div class="xs2 subhead--vertical"></div>
+
+
+			{% if page.recognition %}
+			<div class="sm10">
+				<span class="subhead cl-primary">Recognition</span> <h4 class="text-italic">{{ page.recognition}}</h4>
+			</div>
+			{% endif %}
+
+
+			<div class="xs12 pt5">
+				{{ page.images }} 
+			</div>
+
+	     	<div class="xs2 subhead--vertical"></div>
+	        <div class="xs10 content--primary ptb5">
+				{{ page.content | markdownify }} 
+			</div>
+      	</div>
 	</div>
- 	</section>
-
-
-
+  </section>
+  <section class="bg-quaternary cl-secondary">	
+		{% include portfolio.html %}
+  </section>
 </main>
 
 {% include footer.html %}
