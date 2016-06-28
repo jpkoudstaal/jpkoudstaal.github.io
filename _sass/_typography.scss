@@ -2,11 +2,11 @@
 //  Typography
 ////////////////////////
 
-@import url(https://fonts.googleapis.com/css?family=Raleway:700,800|Libre+Baskerville:400,400italic);
+//@import url(https://fonts.googleapis.com/css?family=Raleway:700,800|Libre+Baskerville:400,400italic);
 
 // Placehold selectors
 %font-sans-primary {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'calluna-sans', sans-serif;
 }
 
 %font-sans-secondary {
@@ -14,7 +14,7 @@
 }
 
 %font-serif {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'calluna', serif;
 }
 
 // Headings

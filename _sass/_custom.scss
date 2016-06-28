@@ -77,10 +77,18 @@ header {
 
 footer {
   @include font-size(12);
-  color: #5D6C81;
 
   ul {
     @include font-size(10);
     letter-spacing: 2.5px;
   }
+}
+
+.cl-quinary{
+  p{
+    a{
+    color:rgba(255,255,255,.8);
+  }
+  }
+  
 }
