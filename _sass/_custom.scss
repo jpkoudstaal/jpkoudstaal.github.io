@@ -16,6 +16,13 @@ html {
   }
 }
 
+.logosinarow img{
+  width: 48%;
+  @include md('>') {
+    width: 32%;
+  }
+}
+
 header {
   position: relative;
   height: 50%;
