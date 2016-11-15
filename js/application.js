@@ -21,4 +21,15 @@ $(function() {
     }
   });
 
+  //caches a jQuery object containing the header element
+  var header = $(".whiteHome");
+  $(window).scroll(function() {
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 520) {
+          header.removeClass('whiteHome').addClass("darkHome");
+      } else {
+          header.removeClass("darkHome").addClass('whiteHome');
+      }
+  });
 });

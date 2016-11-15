@@ -112,6 +112,14 @@ header {
     to   { opacity: 1; }
 }
 
+.whiteHome a{
+  color: #fff;
+}
+.darkHome a{
+  color:$cl-secondary;
+}
+
+
 footer {
   @include font-size(12);
 
