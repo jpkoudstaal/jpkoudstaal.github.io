@@ -113,7 +113,7 @@
       return this;
     }
 
-    this.$mirror = $('<div />').prependTo('body');
+    this.$mirror = $('<div />').prependTo('.barba-container');
     this.$slider = $('<img />').prependTo(this.$mirror);
 
     this.$mirror.addClass('parallax-mirror').css({
